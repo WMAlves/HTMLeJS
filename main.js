@@ -9,10 +9,11 @@ window.onload = () =>{     //função necessária para carregar o html todo ante
     intro.style.background='#ddf';    
     
     bt.onclick = ()=>{
-        let lista = document.getElementById('lista');
-        lista.innerHTML += '<li>Item</item>';
+        let listaAdd = document.getElementById('listaAdd');
+        listaAdd.innerHTML += '<li>Item</item>';
     }
- 
+        let li = document.querySelectorAll('li');        
+        console.log(lista);
     }
 
  
