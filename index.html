@@ -12,12 +12,37 @@
     <p>
         <label for="nome"> Nome: </label>
         <input type="text" id="nome" name="nome"/>
+        <span id="instrucoes"></span>
     </p>
     <p>
         <label for="senha">Senha: </label>
         <input type="password" id="senha" name="senha">
     </p>
     <p><button type="submit">Enviar</button></p>
+
+
+    <p>
+        <label for="salada">Salada</label>
+        <select name="salada" id="nsalada">
+            <option selected value="0">Verde (folhas e palminto)</option>
+            <option value="1">Caprese</option>
+            <option value="2">Caesar</option>
+            <option value="3">Rúcula e pêra</option>
+            <option value="4">Salmão</option>
+        </select>
+    </p>
+    <p>
+        Molho:
+        <input type="radio" value="0" id="molho1"name="nmolho" checked/><label for="molho1">Nenhum</label>
+        <input type="radio" value="1" id="molho2"name="nmolho"/><label for="molho2">Mostarda e Mel</label>
+        <input type="radio" value="2" id="molho3"name="nmolho"/><label for="molho3">Queijos</label>
+        <input type="radio" value="3" id="molho4"name="nmolho"/><label for="molho4">Chipolle</label>    
+    </p>
+    <p>
+        Complementos:
+        <input type="checkbox" id="pao" name="npao" ><label for="npao">Pão Frances</label>
+        <input type="checkbox" id="sobremesa" name="nsobremesa" ><label for="npao">Sobremesa</label>
+    </p>
 
 
 
