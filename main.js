@@ -36,6 +36,12 @@ window.onload = () => {
         console.log(senha.value);
     }
 
+
+
+
+
+    
+//<<<<<<<<<<<<<<<< AQUI COMEÇA OS CÓDIGOS DOS OUTROS ELEMENTOS DE FORMULÁRIO>>>>>>>>>>>>>>>>>>>>//
     let salada=document.getElementById('nsalada');
     let npao=document.getElementById('pao');
     let sobremesa=document.getElementById('sobremesa');
