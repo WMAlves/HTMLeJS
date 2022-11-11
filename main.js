@@ -34,8 +34,27 @@ window.onload = () => {
     let senha = document.getElementById('senha');
     senha.onchange=()=>{
         console.log(senha.value);
-    }
+    } 
 
+    let btn=document.getElementById('btn_submit');
+     btn.disabled=true;
+     
+     let validaForm=()=>{
+        if(nome.value.length==0 || senha.value.length==0)
+        btn.disabled=true;
+        else
+        btn.disabled=false;
+     };
+     nome.onchange=validaForm;
+     senha.onchange=validaForm;
+
+     let fromLogin=document.getElementById(login);
+     fromLogin.onsubmit=()=>{// necessário corrigir esse trecho, pois o a pagina está carregando ainda.
+        console.log({Nome: nome.value, senha: senha.value});
+        return false;
+     };
+     //parei a video aula no tempo 10:38
+     //https://pucminas.instructure.com/courses/127501/pages/formularios-evento-do-formulario?module_item_id=2801291
 
 
 
