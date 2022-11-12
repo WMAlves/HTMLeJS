@@ -1,4 +1,9 @@
 window.onload = () => {
+
+
+
+
+    //<<< MANIPULÇÃO DE CAMPO NOME E SENHA >>>
     let nome = document.getElementById('nome');
     //onchange verifica se há alguma coisa alterada.
     nome.onchange=()=>{
@@ -19,6 +24,7 @@ window.onload = () => {
         let instrucoes = document.getElementById('instrucoes');
         instrucoes.innerHTML='Informe o nome do usuário';
         instrucoes.style.color='#999';
+        nome.style.border='thin black solid';
         
     }
     nome.onblur=()=> { //quando o campo é "desativado", pode ser colocado alguns eventos
@@ -36,8 +42,29 @@ window.onload = () => {
         console.log(senha.value);
     } 
 
+    let instrucoesSenha=document.getElementById('instrcoesSenha');
+    senha.onfocus=()=>{
+        
+        instrucoesSenha.innerHTML='Informe a senha';
+        instrucoesSenha.style.color='#999';
+        senha.style.border='thin black solid';
+    }
+
+    senha.onblur=()=>{ //quando o campo é desativado utliza-se o onblur
+        if(senha.value.length==0){
+            instrucoesSenha.innerHTML='* Necessário informar a senha';
+            instrucoesSenha.style.color='#F00';
+            senha.style.border = 'thin red solid'
+        }
+        
+        
+    }
+
+
+
+
     let btn=document.getElementById('btn_submit');
-     btn.disabled=true;
+     btn.disabled=false;
      
      let validaForm=()=>{
         if(nome.value.length==0 || senha.value.length==0)
@@ -48,15 +75,23 @@ window.onload = () => {
      nome.onchange=validaForm;
      senha.onchange=validaForm;
 
-     let fromLogin=document.getElementById(login);
-     fromLogin.onsubmit=()=>{// necessário corrigir esse trecho, pois o a pagina está carregando ainda.
+     let fromLogin=document.getElementById('login'); //lembre-se de colocar entre aspas o id.
+     fromLogin.onsubmit=(eventos)=>{
         console.log({Nome: nome.value, senha: senha.value});
-        return false;
+        console.log(eventos);
+        console.log(eventos.target);
+        console.log(eventos.type);
+        console.log(eventos.target.id);
+        
+
+        if(nome.value==0|| senha.value==0){
+            alert("Os campos Nome e Senha devem ser preenchidos");
+        }
+        eventos.preventDefault();
+        
      };
-     //parei a video aula no tempo 10:38
-     //https://pucminas.instructure.com/courses/127501/pages/formularios-evento-do-formulario?module_item_id=2801291
-
-
+   
+ 
 
 
     
