@@ -13,7 +13,7 @@ window.onload = () => {
         console.log('input', nome.value.length);    
     };
     nome.oninput=()=>{
-      let caracteresInvalido ='!@$%¨&*()-=<>,.;[]{}';
+      let caracteresInvalido ='!@$%#¨&*()-=<>,.;[]{}';
       let ultimoCaracter=nome.value.charAt(nome.value.length-1);
       
       if(caracteresInvalido.indexOf(ultimoCaracter)>=0)
